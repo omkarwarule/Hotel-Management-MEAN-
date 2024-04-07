@@ -1,9 +1,9 @@
 
 <nav class="navbar navbar-light bg-primary">
   <div class="container-fluid">
-    <h2> Restaurent Record App</h2>
+    <h2> Job Record App</h2>
     <div class="d-flex">
-     <button (click)="clickAddResto()" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModall">Add Restaurent</button>
+     <button (click)="clickAddResto()" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModall">Add job</button>
      <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
        <div class="modal-dialog">
          <div class="modal-content">
@@ -16,7 +16,7 @@
                 
                    <div class="mb-3">
                      <label class="form-label">Name</label>
-                     <input type="text" class="form-control" formControlName="name" placeholder="Restaurent Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                     <input type="text" class="form-control" formControlName="name" placeholder=" Name" id="exampleInputEmail1" aria-describedby="emailHelp">
                    </div>
                    <div class="mb-3">
                      <label  class="form-label">Email</label>
@@ -32,11 +32,11 @@
                    </div>
                    <div class="mb-3">
                        <label  class="form-label">Services</label>
-                       <input type="text" class="form-control" formControlName="services"  placeholder="chai , coffee" id="exampleInputPassword1">
+                       <input type="text" class="form-control" formControlName="services"  placeholder="web,app" id="exampleInputPassword1">
                    </div>
                    <div class="mb-3">
                     <label  class="form-label">id</label>
-                    <input type="text" class="form-control" formControlName="id"  placeholder="chai , coffee" id="exampleInputPassword1">
+                    <input type="text" class="form-control" formControlName="id"  placeholder="id" id="exampleInputPassword1">
                 </div>
                  </form>
            </div>
@@ -48,7 +48,7 @@
          </div>
        </div>
      </div>
-     <button routerLink="/login" style="margin-left: 5px;" class="btn btn-danger" type="button" data-bs-toggle="modal">Log Out</button>
+     <!-- <button routerLink="/login" style="margin-left: 5px;" class="btn btn-danger" type="button" data-bs-toggle="modal">Log Out</button> -->
    </div>
   </div>
 </nav>
@@ -56,12 +56,12 @@
 <table class="table mt-4">
     <thead>
         <tr>
-            <th scope="col">Restaurent Id</th>
-            <th scope="col">Restaurent Name</th>
-            <th scope="col">Restaurent Email</th> 
-            <th scope="col">Restaurent Address</th> 
-            <th scope="col">Restaurent Phone</th>
-            <th scope="col">Restaurent Services</th>
+            <th scope="col"> Id</th>
+            <th scope="col"> Name</th>
+            <th scope="col"> Email</th> 
+            <th scope="col"> Address</th> 
+            <th scope="col"> Phone</th>
+            <th scope="col"> Services</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -76,7 +76,6 @@
             <td>
                 <button (click)="onEditResto(data)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button> &nbsp;
                 <button (click)="deleteResto(data.id)" class="btn btn-danger" (click)="refreshPage()" >Delete</button>
-                <button (click)="onEditResto(data)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Menu</button> &nbsp;
 
             </td>
         </tr>
@@ -97,7 +96,7 @@
             <form [formGroup]="formValue">
                 <div class="mb-3">
                   <label class="form-label">Name</label>
-                  <input type="text" class="form-control" formControlName="name" placeholder="Restaurent Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" formControlName="name" placeholder=" Name" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">Email</label>
@@ -113,7 +112,7 @@
                 </div>
                 <div class="mb-3">
                     <label  class="form-label">Services</label>
-                    <input type="text" class="form-control" formControlName="services"  placeholder="chai , coffee" id="exampleInputPassword1">
+                    <input type="text" class="form-control" formControlName="services"  placeholder="web,app" id="exampleInputPassword1">
                 </div>
               </form>
         </div>

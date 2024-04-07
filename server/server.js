@@ -3,7 +3,6 @@ const {MongoClient} = require("mongodb");
 const URL = "mongodb://localhost:27017";
 express=require('express');
 cors=require("cors");
-// const multer=require("multer");
 eobj=express();
 eobj.use(cors());
 port=5555;
@@ -45,8 +44,8 @@ eobj.get('/punes',sender);
 async function GetConnection()
 {
     let result = await client.connect();
-    let db = result.db("hotel");
-    return db.collection("manage");
+    let db = result.db("admin");
+    return db.collection("company");
 }
 
 async function ReadData()
@@ -136,14 +135,15 @@ async function GetConnection2()
     let db = result.db("hotel");
     return db.collection("customer");
 }
-async function sender2(req,res)
+async function ghal(req,res)
 {
     try {
         let data = await GetConnection2();
 
         // Assuming the data to be inserted is sent in the request body
         const newData = req.params.data;
-        // newData.id="100";
+        console.log(newData);
+
         const updateFields = JSON.parse(newData);
 
         console.log("newData:", updateFields);
@@ -164,7 +164,7 @@ async function sender2(req,res)
         res.status(500).send("Error inserting data");
     }
 }
-eobj.get('/signup/:data',sender2);
+eobj.get('/signup/:data',ghal);
 async function GetConnection3()
 {
     let result = await client.connect();
