@@ -44,8 +44,8 @@ eobj.get('/punes',sender);
 async function GetConnection()
 {
     let result = await client.connect();
-    let db = result.db("admin");
-    return db.collection("company");
+    let db = result.db("hotel");
+    return db.collection("manage");
 }
 
 async function ReadData()
